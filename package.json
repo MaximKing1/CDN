@@ -1,0 +1,20 @@
+{
+  "name": "protectcdn",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "fastify": "^3.27.1",
+    "fastify-compress": "^4.0.1",
+    "fastify-formbody": "^5.2.0",
+    "fastify-helmet": "^7.0.1",
+    "mongoose": "^6.2.1",
+    "xss-filters": "^1.2.7"
+  }
+}
