@@ -15,6 +15,7 @@
     "fastify-formbody": "^5.2.0",
     "fastify-helmet": "^7.0.1",
     "mongoose": "^6.2.1",
+    "wasabi-s3": "^1.0.0",
     "xss-filters": "^1.2.7"
   }
 }
