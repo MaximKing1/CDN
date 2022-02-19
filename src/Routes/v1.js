@@ -6,6 +6,7 @@ const readFile = require('../Functions/readFile');
 module.exports = async function (fastify, opts, done) {
   fastify.get('/public/get/:id', async (request, reply) => {
     const ID = request.params.id;
+    const file = readFile(ID)
   }); // Public
 
   fastify.get('/public/info/:id', async (request, reply) => {
