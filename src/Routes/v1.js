@@ -1,6 +1,7 @@
 const config = require('../../config');
 const bcrypt = require('bcrypt');
 const xssFilters = require('xss-filters');
+const readFile = require('../Functions/readFile');
 
 module.exports = async function (fastify, opts, done) {
   fastify.get('/public/get/:id', async (request, reply) => {
