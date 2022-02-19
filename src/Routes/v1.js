@@ -16,6 +16,8 @@ module.exports = async function (fastify, opts, done) {
 
   fastify.post('/public/upload/:id', async (request, reply) => {
     const ID = request.params.id;
+    const file = request.body.file;
+
   }); // Public
 
   fastify.post('/private/delete/:id', async (request, reply) => {
