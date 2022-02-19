@@ -11,6 +11,7 @@ module.exports = async function (fastify, opts, done) {
 
   fastify.get('/public/info/:id', async (request, reply) => {
     const ID = request.params.id;
+    const file = readFile(ID)
   }); // Public
 
   fastify.post('/public/upload/:id', async (request, reply) => {
