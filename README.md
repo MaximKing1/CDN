@@ -6,7 +6,7 @@
 ↓           /   \           ↓
 ↓         /       \         ↓
 ↓       /           \       ↓
-↓[ UK Server ][ US Server ] ↓ --> Replicates the files from the S3 Bucket to each server (Replicates at every location)
+↓[ UK Server ][ US Server ] ↓ --> Replicates the files from the S3 Bucket to each server (Replicates at every location) 
 ↓      \             /      ↓
 ↓       \           /       ↓
 ↓        \         /        ↓
@@ -26,7 +26,7 @@
 ↓            |||            ↓
 ↓   ---------------------   ↓
 ↓   |   Load Balancer   |   ↓ --> Redirects the request to the least stressed server in the location (UK1: 50%, UK2:25% - Would forward to UK2 as lowest System load)
-↓   ---------------------   ↓
+↓   ---------------------   ↓ --> Load Balancer Not Realeased (W.I.P) 
 ↓            |||            ↓
 ↓   ---------------------   ↓
 ↓   |        CDN        |   ↓ --> Serves the requested file on the cloest server to them
