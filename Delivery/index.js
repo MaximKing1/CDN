@@ -1,5 +1,6 @@
 const app = require('fastify')(),
   returnServerIP = require('./Functions/returnServerIP'),
+  checkServer = require(./Functions/checkServer'),
   { yellow } = require('chalk');
 
 console.log(
@@ -20,13 +21,15 @@ console.log(
 
 app.get('*', async function (req, res) {
   returnServerIP(req).then((data) => {
-    const PATH = req.url;
+    checkServer(data.server.DOMAIN).then((status) => {
+      const PATH = req.url;
 
-    console.log(
-      yellow('[ FORWARDING ]'),
-      `${req.ip} Redirecting Request to Local Server --> ${data.server.DOMAIN}${PATH} (${data.server.COUNTRY})`
-    );
-    res.redirect(`${data.server.DOMAIN}${PATH}`);
+      console.log(
+        yellow('[ FORWARDING ]'),
+        `${req.ip} Redirecting Request to Local Server --> ${data.server.DOMAIN}${PATH} (${data.server.COUNTRY}) -- Server: ${status}`
+      );
+      res.redirect(`${data.server.DOMAIN}${PATH}`);
+    });
   });
 });
 
