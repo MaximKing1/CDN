@@ -5,3 +5,4 @@ exports.accessKeyID = '';
 exports.secretAccessKey = '';
 exports.bucketName = '';
 
+exports.deliverySystem = "https://cdn.example.com";
