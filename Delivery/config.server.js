@@ -12,4 +12,5 @@ exports.locations = {
   GE: 'https://cdn.ge.example.com',
   TW: 'https://cdn.tw.example.com',
 }; // Locations Object
+
 exports.defaultServer = 'IP_HERE'; // The Fallback IP If There Isnt a Close Server
