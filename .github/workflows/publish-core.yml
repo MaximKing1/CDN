@@ -1,4 +1,4 @@
-name: Publish DockerHub image
+name: Core Module Dockerfile Publish
 
 on:
   push:
