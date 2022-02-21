@@ -1,5 +1,5 @@
 const { lookup } = require('geoip-country');
-const config = require('../../config');
+const config = require('../../config.server.js');
 const { red, green } = require('chalk');
 
 function isEmpty() {
