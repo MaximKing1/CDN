@@ -1,3 +1,5 @@
+const config = require('../../config.slave.js');
+
 module.exports = async (app) => {
   app.register(require('fastify-formbody'));
   app.register(require('fastify-compress'), { global: true });
@@ -7,8 +9,8 @@ module.exports = async (app) => {
 
   const start = async () => {
     try {
-      await app.listen(3005, '0.0.0.0');
-      console.log(chalk.green('[WEB] Website Listening On Port 3005...'));
+      await app.listen(config.PORT || 3005, '0.0.0.0');
+      console.log(chalk.green(`[WEB] Website Listening On Port ${config.PORT || 3005}...`));
     } catch (err) {
       app.log.error(err);
     }
