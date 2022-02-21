@@ -1,6 +1,6 @@
 FROM node:16-alpine
 
-WORKDIR /usr/src/CDN
+WORKDIR /usr/src/CDN/slave
 COPY . .
 
 RUN npm install
