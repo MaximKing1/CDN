@@ -1,6 +1,6 @@
 const app = require('fastify')(),
   returnServerIP = require('./Functions/returnServerIP'),
-  checkServer = require(./Functions/checkServer'),
+  checkServer = require('./Functions/checkServer'),
   { yellow } = require('chalk');
 
 console.log(
