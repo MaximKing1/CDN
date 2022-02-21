@@ -1,3 +1,11 @@
+# 🚀 WasiCDN
+Blazing Fast S3 Powered CDN, Powered By Fastify & S3 Compatible Buckets.
+
+**Features:**<br>
+• Fastify Powered Backend<br>
+• Built in Load Balancer which directs the connection to the closest server to the user<br>
+• Each Slave CDN pulls files from your selected S3 Bucket or local system, each slave location has a copy and distributes them to users.
+
 ## CDN Replication
 ```
 ↓    (    Wasabi S3   )     ↓ --> Fetches files from the S3 Bucket
