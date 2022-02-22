@@ -1,4 +1,4 @@
-const config = require('../../config');
+const config = require('../../config.slave.js');
 
 module.exports = (remoteFilename) => {
   let bucketName = config.bucketName;
