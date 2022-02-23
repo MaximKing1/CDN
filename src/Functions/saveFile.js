@@ -1,7 +1,5 @@
-const config = require('./../config.slave.js');
-
 module.exports = () => {
-  let bucketName = config.bucketName;
+  let bucketName = process.env.bucketName;
   let filePath = './tmp';
   global.s3
     .uploadFile(bucketName, filePath)

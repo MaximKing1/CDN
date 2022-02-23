@@ -1,7 +1,5 @@
-const config = require('./../config.slave.js');
-
 module.exports = (remoteFilename) => {
-  let bucketName = config.bucketName;
+  let bucketName = process.env.bucketName;
   global.s3
     .readFile(bucketName, remoteFilename)
     .then((resp) => {

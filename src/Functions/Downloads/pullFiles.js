@@ -1,5 +1,3 @@
-const chalk = require('chalk');
-
 module.exports = async (app) => {
   let bucketName = 'example';
   let remoteFilename = 'file.bin';
