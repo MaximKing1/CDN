@@ -2,6 +2,7 @@ version: "3.9"
 
 services:
   cdn:
+    image: maximking19/wasicdn-slave
     build: .
     network_mode: host
     environment:
