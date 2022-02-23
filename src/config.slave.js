@@ -9,4 +9,6 @@ exports.accessKeyID = '';
 exports.secretAccessKey = '';
 exports.bucketName = '';
 
+exports.discordWebhook = "https://discord.com/webhook/"; // Discord Webhook For Files Uploads and User Audit Logs
+
 exports.deliverySystem = "https://cdn.example.com";
