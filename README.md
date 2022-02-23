@@ -1,4 +1,4 @@
-# 🚀 WasiCDN
+# 🚀 WasiCDN 
 Blazing Fast S3 Powered CDN, Powered By Fastify, S3 Compatible Buckets & Docker!
 
 Core DockerHub: https://hub.docker.com/r/maximking19/wasicdn-core<br>
