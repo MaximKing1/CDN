@@ -13,7 +13,7 @@ app.ready((err) => {
 });
 
 app.get('/new/server', function (req, res) {
-  app.io.emit('connec');
+  app.io.emit('connect');
 });
 
 app.get('*', async function (req, res) {
