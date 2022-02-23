@@ -1,4 +1,6 @@
 const config = require('./../config.slave.js');
+const path = require('path');
+const chalk = require('chalk');
 
 module.exports = async (app) => {
   app.register(require('fastify-formbody'));
@@ -18,7 +20,7 @@ module.exports = async (app) => {
         chalk.green(`[WEB] Website Listening On Port ${config.PORT || 3005}...`)
       );
     } catch (err) {
-      app.log.error(err);
+      console.error(err);
     }
   };
   start();

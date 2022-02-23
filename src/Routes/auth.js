@@ -1,4 +1,4 @@
-const config = require('../../config');
+const config = require('./../config.slave.js');
 const bcrypt = require('bcrypt');
 const xssFilters = require('xss-filters');
 
