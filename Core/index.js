@@ -21,5 +21,18 @@ app.get('*', async function (req, res) {
   });
 });
 
-app.listen(process.env.PORT);
-io.listen(process.env.adminPort);
+const start = async () => {
+  try {
+    await app.listen(process.env.PORT, '0.0.0.0');
+    await io.listen(process.env.adminPort);
+    console.log(
+      `[ CDN: ${process.env.name} ] Location & Load Balencer Listening On Port ${process.env.PORT}...`
+    );
+    console.log(
+      `[ SOCKET.IO ] Socket.io Listening On Port ${process.env.adminPort}...`
+    );
+  } catch (err) {
+    console.error(err);
+  }
+};
+start();
