@@ -1,3 +1,3 @@
 module.exports = (app) => {
-    app.UserManager = require('../Database/UserManager')
-}
+  app.UserManager = require('../Database/UserManager');
+};
