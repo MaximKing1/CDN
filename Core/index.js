@@ -1,7 +1,20 @@
 const app = require('fastify')(),
   returnServerIP = require('./Functions/returnServerIP'),
-  checkServer = require('./Functions/checkServer'),
-  { yellow } = require('chalk');
+  checkServer = require('./Functions/checkServer');
+
+app.register(require('fastify-socket.io'), {});
+
+app.ready((err) => {
+  if (err) throw err;
+
+  app.io.on('connect', (socket) =>
+    console.info('New Slave Connected!', socket.id)
+  );
+});
+
+app.get('/new/server', function (req, res) {
+  app.io.emit('connec');
+});
 
 app.get('*', async function (req, res) {
   returnServerIP(req).then((data) => {
@@ -9,7 +22,7 @@ app.get('*', async function (req, res) {
       const PATH = req.url;
 
       console.log(
-        yellow('[ FORWARDING ]'),
+        '[ FORWARDING ]',
         `${req.ip} Redirecting Request to Local Server --> ${data.server.DOMAIN}${PATH} (${data.server.COUNTRY}) -- Server: ${status}`
       );
       res.redirect(`${data.server.DOMAIN}${PATH}`);

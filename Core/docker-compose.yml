@@ -5,13 +5,13 @@ services:
     image: maximking19/wasicdn-core
     build: .
     network_mode: host
+    env_file: .env # Create a .env file and add Slave Locations.
     environment:
       - mongodb="mongodb://" # Your MongoDB Connector For The User & Files Database
       - PORT=3001 # The Port For The Core Server
       - adminPassword="yg6g4byugeuybygbiygyugbyuftuftufvtufvtfytdfcytftufytfc"
       - files="local" # "s3" or "local", Where the CDN files are downloaded from. (Local = Pulls From The Core Server Uploads Folder, S3 = Pulls From The S3 Bucket)
-      - defaultServer: "IP_HERE" # The Fallback IP If There Isnt a Close Server
-      - locations: { GB: https://cdn.gb.example.com, US: https://cdn.us.example.com, SG: https://cdn.sg.example.com, GE: https://cdn.ge.example.com, TW: https://cdn.tw.example.com } # The Slave Locations
+      - defaultServer="IP_HERE" # The Fallback IP If There Isnt a Close Server
     # s3 Bucket Details (If using s3)
       - s3Provider="" # Amazon AWS S3 "aws", Google Cloud Storage "gcs", Microsoft Azure Blob Storage "azure", DigitalOcean Spaces "digitalocean", Wasabi Object Storage "wasabi" (Custom S3 Bucket use = "s3compatible")
     # - endpoint="" # If using "s3compatible", add endpoint here
