@@ -2,7 +2,6 @@ version: "3.9"
 
 services:
   core:
-    image: maximking19/wasicdn-core
     build: .
     network_mode: host
     env_file: .env # Create a .env file and add Slave Locations.
