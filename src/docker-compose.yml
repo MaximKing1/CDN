@@ -6,12 +6,12 @@ services:
     build: .
     network_mode: host
     environment:
-      - name="UK" # Location Name
+      - name=UK # Location Name
       - PORT=3005 # The Port For The CDN
       - adminPassword="yg6g4byugeuybygbiygyugbyuftuftufvtufvtfytdfcytftufytfc"
       - mongodb="mongodb://" # Your MongoDB Connector For The User & Files Database
       - files="local" # "s3" or "local", Where the CDN files are downloaded from. (Local = Pulls From The Core Server Uploads Folder, S3 = Pulls From The S3 Bucket)
-      - coreServerIP="localhost:3001" # Where the core server is located (IP:PORT) (Can Find Port in Docker Compose Core Config)
+      - coreServerIP="localhost:3010" # Where the core server is located (IP:PORT) (Can Find Port in Docker Compose Core Config Under adminPort. Default: 3010)
       - discordWebhook="https://discord.com/webhook/" # Discord Webhook For Files Uploads and User Audit Logs
       # s3 Bucket Details (If using s3)
       - s3Provider="" # Amazon AWS S3 "aws", Google Cloud Storage "gcs", Microsoft Azure Blob Storage "azure", DigitalOcean Spaces "digitalocean", Wasabi Object Storage "wasabi" (Custom S3 Bucket use = "s3compatible")

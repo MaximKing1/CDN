@@ -1,8 +1,11 @@
 const app = require('fastify')(),
   returnServerIP = require('./Functions/returnServerIP'),
-  checkServer = require('./Functions/checkServer');
+  checkServer = require('./Functions/checkServer'),
+  io = require('socket.io')();
 
-app.register(require('fastify-socket.io'), {});
+io.on('connection', (client) => {
+  console.log('New Slave Connected', client.id);
+});
 
 app.ready((err) => {
   if (err) throw err;
@@ -10,10 +13,6 @@ app.ready((err) => {
   app.io.on('connect', (socket) =>
     console.info('New Slave Connected!', socket.id)
   );
-});
-
-app.get('/new/server', function (req, res) {
-  app.io.emit('connect');
 });
 
 app.get('*', async function (req, res) {
@@ -31,3 +30,4 @@ app.get('*', async function (req, res) {
 });
 
 app.listen(process.env.PORT);
+io.listen(process.env.adminPort);
