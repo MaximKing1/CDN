@@ -6,6 +6,7 @@ services:
     build: .
     network_mode: host
     environment:
+      - name="UK" # Location Name
       - PORT=3005 # The Port For The CDN
       - adminPassword="yg6g4byugeuybygbiygyugbyuftuftufvtufvtfytdfcytftufytfc"
       - mongodb="mongodb://" # Your MongoDB Connector For The User & Files Database

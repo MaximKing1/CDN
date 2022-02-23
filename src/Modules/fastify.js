@@ -15,7 +15,7 @@ module.exports = async (app) => {
     try {
       await app.listen(process.env.PORT, '0.0.0.0');
       console.log(
-        `[WEB] Website Listening On Port ${process.env.PORT}...`
+        `[ CDN: ${process.env.name} ] Website Listening On Port ${process.env.PORT}...`
       );
     } catch (err) {
       console.error(err);
