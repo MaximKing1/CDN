@@ -7,14 +7,6 @@ io.on('connection', (client) => {
   console.log('New Slave Connected', client.id);
 });
 
-app.ready((err) => {
-  if (err) throw err;
-
-  app.io.on('connect', (socket) =>
-    console.info('New Slave Connected!', socket.id)
-  );
-});
-
 app.get('*', async function (req, res) {
   returnServerIP(req).then((data) => {
     checkServer(data.server.DOMAIN).then((status) => {
