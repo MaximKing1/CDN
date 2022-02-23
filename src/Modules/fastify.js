@@ -1,4 +1,3 @@
-const config = require('./../config.slave.js');
 const path = require('path');
 const chalk = require('chalk');
 
@@ -15,9 +14,9 @@ module.exports = async (app) => {
 
   const start = async () => {
     try {
-      await app.listen(config.PORT || 3005, '0.0.0.0');
+      await app.listen(process.env.PORT, '0.0.0.0');
       console.log(
-        chalk.green(`[WEB] Website Listening On Port ${config.PORT || 3005}...`)
+        chalk.green(`[WEB] Website Listening On Port ${process.env.PORT}...`)
       );
     } catch (err) {
       console.error(err);

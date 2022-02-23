@@ -1,10 +1,9 @@
-const config = require('./../config.slave.js');
 const bcrypt = require('bcrypt');
 const xssFilters = require('xss-filters');
 
 module.exports = async function (fastify, opts, done) {
   fastify.post('/addUser', async (request, reply) => {
-    if (request.headers.auth === config.adminPassword) {
+    if (request.headers.auth === process.env.adminPassword) {
       return reply.send('Incorrect Admin Password');
     } // Checks Admin Password In Config For Adding Users
 

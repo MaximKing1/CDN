@@ -1,18 +1,18 @@
 version: "3.9"
 
 services:
-  cdn:
-    image: maximking19/wasicdn-slave
+  core:
+    image: maximking19/wasicdn-core
     build: .
     network_mode: host
     environment:
-      - PORT=3005 # The Port For The CDN
-      - adminPassword="yg6g4byugeuybygbiygyugbyuftuftufvtufvtfytdfcytftufytfc"
       - mongodb="mongodb://" # Your MongoDB Connector For The User & Files Database
+      - PORT=3001 # The Port For The Core Server
+      - adminPassword="yg6g4byugeuybygbiygyugbyuftuftufvtufvtfytdfcytftufytfc"
       - files="local" # "s3" or "local", Where the CDN files are downloaded from. (Local = Pulls From The Core Server Uploads Folder, S3 = Pulls From The S3 Bucket)
-      - coreServerIP="http://localhost:3001" # Where the core server is located
-      - discordWebhook="https://discord.com/webhook/" # Discord Webhook For Files Uploads and User Audit Logs
-      # s3 Bucket Details (If using s3)
+      - defaultServer: "IP_HERE" # The Fallback IP If There Isnt a Close Server
+      - locations: { GB: https://cdn.gb.example.com, US: https://cdn.us.example.com, SG: https://cdn.sg.example.com, GE: https://cdn.ge.example.com, TW: https://cdn.tw.example.com } # The Slave Locations
+    # s3 Bucket Details (If using s3)
       - s3Provider="" # Amazon AWS S3 "aws", Google Cloud Storage "gcs", Microsoft Azure Blob Storage "azure", DigitalOcean Spaces "digitalocean", Wasabi Object Storage "wasabi" (Custom S3 Bucket use = "s3compatible")
     # - endpoint="" # If using "s3compatible", add endpoint here
     # - region="" # If using "aws" or "digitalocean"
@@ -20,4 +20,4 @@ services:
       - secretAccessKey=""
       - bucketName=""
     volumes:
-      - /usr/lib/cdn-slave/uploads:/usr/src/CDN/slave/uploads # Where the uploads are stored (/host/path:/container/path)
+      - /usr/lib/cdn-core/uploads:/usr/src/CDN/core/uploads # Where the uploads are stored (/host/path:/container/path)

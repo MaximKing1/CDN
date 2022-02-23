@@ -2,7 +2,7 @@ const config = require('./../config.slave.js');
 
 module.exports = (remoteFilename) => {
   let bucketName = config.bucketName;
-  global.wasabi
+  global.s3
     .readFile(bucketName, remoteFilename)
     .then((resp) => {
       if (resp.status === 200) {

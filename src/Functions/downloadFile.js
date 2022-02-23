@@ -1,9 +1,7 @@
-const config = require('./../config.slave.js');
-
 module.exports = (remoteFilename) => {
-  let bucketName = config.bucketName;
+  let bucketName = process.env.bucketName;
   let downloadedFilePath = '/temp';
-  global.wasabi
+  global.s3
     .downloadFile(bucketName, remoteFilename, downloadedFilePath)
     .then((resp) => {
       if (resp.status === 200) {

@@ -3,7 +3,7 @@ const config = require('./../config.slave.js');
 module.exports = () => {
   let bucketName = config.bucketName;
   let filePath = './tmp';
-  global.wasabi
+  global.s3
     .uploadFile(bucketName, filePath)
     .then((resp) => {
       if (resp.status === 200) {
