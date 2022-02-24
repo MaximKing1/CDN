@@ -7,6 +7,7 @@ services:
     network_mode: host
     env_file: .env # Create a .env file and add Slave Locations.
     environment:
+      - name=Core
       - mongodb="mongodb://" # Your MongoDB Connector For The User & Files Database
       - PORT=3001 # The Port For The CDN Service
       - adminPort=3010 # The Admin Port (For Backend Socket.io Use Only)
