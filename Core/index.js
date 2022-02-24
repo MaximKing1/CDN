@@ -24,7 +24,7 @@ app.get('*', async function (req, res) {
 const start = async () => {
   try {
     await app.listen(process.env.PORT, '0.0.0.0');
-    await io.listen(process.env.adminPort);
+    await io.listen(process.env.adminPort, '0.0.0.0');
     console.log(
       `[ CDN: ${process.env.name} ] Location & Load Balencer Listening On Port ${process.env.PORT}...`
     );
