@@ -22,7 +22,7 @@ services:
       - secretAccessKey=""
       - bucketName=""
     volumes:
-      - /usr/lib/cdn-core/uploads:/usr/src/CDN/core/uploads # Where the uploads are stored (/host/path:/container/path)
+      - /usr/lib/cdn-core/uploads:/usr/src/CDN/core/Core/uploads # Where the uploads are stored (/host/path:/container/path)
     ports:
       - "3001:3001" # Change this to PORT Variable
       - "3010:3010" # Change this to adminPort Variable

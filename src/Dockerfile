@@ -3,7 +3,7 @@ FROM node:latest
 WORKDIR /usr/src/CDN/slave
 COPY . .
 
-RUN npm install
+RUN npm install && npm update
+RUN npm rebuild bcrypt
 
-EXPOSE 3005
 CMD [ "node", "index.js" ]

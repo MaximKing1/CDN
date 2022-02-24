@@ -21,4 +21,4 @@ services:
       - secretAccessKey=""
       - bucketName=""
     volumes:
-      - /usr/lib/cdn-slave/uploads:/usr/src/CDN/slave/uploads # Where the uploads are stored (/host/path:/container/path)
+      - /usr/lib/cdn-slave/uploads:/usr/src/CDN/slave/src/uploads # Where the uploads are stored (/host/path:/container/path)
