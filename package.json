@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "@google-cloud/storage": "^5.18.2",
     "aws-sdk": "^2.1079.0",
