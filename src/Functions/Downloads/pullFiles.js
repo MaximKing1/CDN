@@ -7,7 +7,6 @@ module.exports = async (app) => {
     .then((resp) => {
       if (resp.status === 200) {
         console.log(resp.message);
-        // Output: Bucket "example" was deleted successfully
       }
     })
     .catch((resp) => {
