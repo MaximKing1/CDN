@@ -43,7 +43,7 @@ module.exports = async function (fastify, opts, done) {
     const ID = request.params.id;
     const email = xssFilters.inHTMLData(request.body.email);
     const password = request.body.password;
-    const UserManager = app.UserManager.findOne({
+    const UserManager = await app.UserManager.findOne({
       email: email,
     }).then((user) => {
       if (!user) {
@@ -54,7 +54,7 @@ module.exports = async function (fastify, opts, done) {
       }
       bcrypt.compare(password, user.password).then((isMatch) => {
         if (isMatch) {
-          // Send Data HEre
+          // Send Data Here
         }
       });
     });
@@ -64,7 +64,7 @@ module.exports = async function (fastify, opts, done) {
     const ID = request.params.id;
     const email = xssFilters.inHTMLData(request.body.email);
     const password = request.body.password;
-    const UserManager = app.UserManager.findOne({
+    const UserManager = await app.UserManager.findOne({
       email: email,
     }).then((user) => {
       if (!user) {
@@ -75,7 +75,7 @@ module.exports = async function (fastify, opts, done) {
       }
       bcrypt.compare(password, user.password).then((isMatch) => {
         if (isMatch) {
-          // Send Data HEre
+          // Send Data Here
         }
       });
     });
@@ -85,7 +85,7 @@ module.exports = async function (fastify, opts, done) {
     const ID = request.params.id;
     const email = xssFilters.inHTMLData(request.body.email);
     const password = request.body.password;
-    const UserManager = app.UserManager.findOne({
+    const UserManager = await app.UserManager.findOne({
       email: email,
     }).then((user) => {
       if (!user) {
@@ -96,7 +96,7 @@ module.exports = async function (fastify, opts, done) {
       }
       bcrypt.compare(password, user.password).then((isMatch) => {
         if (isMatch) {
-          // Send Data HEre
+          // Send Data Here
         }
       });
     });
