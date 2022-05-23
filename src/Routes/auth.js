@@ -12,12 +12,12 @@ module.exports = async function (fastify, opts, done) {
     if (!UserManager) {
       const newUserManager = new app.UserManager({
         email: email,
-        ip: request.ip,
       }).then((newUserManager) => {
         bcrypt.genSalt(10, (err, salt) => {
           bcrypt.hash(newUserManager.password, salt, (err, hash) => {
             if (err) throw err;
             newUserManager.password = hash;
+            newUserManager.ip = request.ip;
             newUserManager.save();
           });
         });
