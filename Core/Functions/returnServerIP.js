@@ -1,7 +1,8 @@
 const { lookup } = require('geoip-country');
+const { locations } = require('../config');
 
 function isEmpty() {
-  const configFile = process.env.locations;
+  const configFile = locations;
   return Object.keys(configFile).length === 0;
 }
 
@@ -16,7 +17,7 @@ module.exports = async function (request) {
       COUNTRY: 'Localhost',
     });
 
-  if (isEmpty() | !process.env.locations) {
+  if (isEmpty() | !locations) {
     console.log(
       '[ MISCONFIG ]',
       "Please change the locatons Object in the .env file.\nExample: locations={ GB: 'YOUR_SERVER_DOMAIN', US: 'YOUR_SERVER_DOMAIN' }"
@@ -30,7 +31,7 @@ module.exports = async function (request) {
     }; // Example locations for testing
   } else {
     console.log('[ INFO ]', 'Detected Server Locations in Config File.');
-    locations = config.locations;
+    locations = locations;
   }
 
   class data {
