@@ -1,12 +1,12 @@
 const path = require('path');
 
 module.exports = async (app) => {
-  app.register(require('@fastify/formbody'));
-  app.register(require('@fastify/compress'), { global: true });
-  app.register(require('@fastify/helmet'), {
+  await app.register(require('@fastify/formbody'));
+  await app.register(require('@fastify/compress'), { global: true });
+  await app.register(require('@fastify/helmet'), {
     contentSecurityPolicy: false,
   });
-  app.register(require('@fastify/static'), {
+  await app.register(require('@fastify/static'), {
     root: path.join(__dirname, '../uploads'),
     prefix: '/uploads/',
   });
