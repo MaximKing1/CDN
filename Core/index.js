@@ -7,6 +7,12 @@ io.on('connection', (client) => {
   console.log('New Slave Connected', client.id);
 });
 
+app.register(require('@fastify/formbody'));
+app.register(require('@fastify/compress'), { global: true });
+app.register(require('@fastify/helmet'), {
+  contentSecurityPolicy: false,
+});
+
 app.get('*', async function (req, res) {
   returnServerIP(req).then((data) => {
     checkServer(data.server.DOMAIN).then((status) => {
