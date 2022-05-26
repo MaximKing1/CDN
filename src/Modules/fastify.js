@@ -1,4 +1,4 @@
-const path = require('path');
+const { join } = require('path');
 
 module.exports = async (app) => {
   await app.register(require('@fastify/formbody'));
@@ -7,7 +7,7 @@ module.exports = async (app) => {
     contentSecurityPolicy: false,
   });
   await app.register(require('@fastify/static'), {
-    root: path.join(__dirname, '../uploads'),
+    root: join(__dirname, '../uploads'),
     prefix: '/uploads/',
   });
 
