@@ -12,6 +12,7 @@ module.exports = async function (fastify, opts, done) {
     if (!UserManager) {
       new app.UserManager({
         email: email,
+        password: null,
       }).then(async (newUserManager) => {
         genSalt(10, (err, salt) => {
           hash(newUserManager.password, salt, async (err, hash) => {

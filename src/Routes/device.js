@@ -5,4 +5,6 @@ const {
   sleeptDevice,
 } = require('../deviceFuncs/deviceFuncs');
 
-module.exports = async function (fastify, opts, done) {};
+module.exports = async function (fastify, opts, done) {
+    
+};
