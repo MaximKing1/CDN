@@ -54,3 +54,5 @@ Slave Service DockerHub: https://hub.docker.com/r/maximking19/wasicdn-slave
 ↓    -------------------    ↓
 ↓        Destination        ↓ --> File received! :)
 ↓    -------------------    ↓
+
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FMaximKing1%2FCDN.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2FMaximKing1%2FCDN?ref=badge_large)
