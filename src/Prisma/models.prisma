@@ -1,0 +1,21 @@
+datasource db {
+    provider = "mongodb"
+    url      = env("MONGODB_STRING")
+}
+
+model User {
+    userID    Int      @id @map("_id")
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+    email     String?  @unique
+    password  String?  @unique
+    ips       IPS[]
+}
+
+model IPS {
+    id         Int      @id @map("_id")
+    IP         String?
+    date       DateTime @default(now())
+    User       User?    @relation(fields: [userUserID], references: [userID])
+    userUserID Int?
+}
