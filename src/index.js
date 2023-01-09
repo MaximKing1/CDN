@@ -1,4 +1,4 @@
-const app = require('fastify')({ logger: false });
+const app = require('fastify')({ logger: true }); // DEBUGGING
 const socket = require('socket.io-client')(`ws://${process.env.coreServerIP}`);
 
 socket.on('connect', (socket) => {
