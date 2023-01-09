@@ -1,7 +1,7 @@
 const app = require('fastify')({ logger: false });
 const socket = require('socket.io-client')(`ws://${process.env.coreServerIP}`);
 
-socket.on('connect', () => {
+socket.on('connect', (socket) => {
   console.log(socket.id);
 });
 
