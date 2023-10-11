@@ -4,7 +4,7 @@ const {
   logOffDevice,
   sleepDevice,
 } = require('../deviceFuncs/deviceFuncs');
-const { genSalt, compare, hash } = require('bcrypt');
+const { compare } = require('bcrypt');
 const { inHTMLData } = require('xss-filters');
 
 module.exports = async function (fastify, opts, done) {
