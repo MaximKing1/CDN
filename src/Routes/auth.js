@@ -19,7 +19,7 @@ module.exports = async function (fastify, opts, done) {
       }
 
       const email = inHTMLData(request.body.email);
-      const password = request.body.password; // Assuming you pass the password when adding a user.
+      const password = request.body.password;
 
       let userID = random(20);
       while (await app.UserManager.findOne({ userID })) {
